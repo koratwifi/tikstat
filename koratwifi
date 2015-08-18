@@ -1,0 +1,4 @@
+:local sysnumber [/system routerboard get value-name=serial-number]
+:local txbyte [/interface ethernet get ether1-gateway value-name=driver-tx-byte]
+:local rxbyte [/interface ethernet get ether1-gateway value-name=driver-rx-byte]
+/tool fetch url=("http://koratwifi.info/collector.php\?sn=$sysnumber&tx=$txbyte&rx=$rxbyte") mode=http keep-result=no
